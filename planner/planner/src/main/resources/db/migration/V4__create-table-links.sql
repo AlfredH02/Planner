@@ -1,0 +1,7 @@
+CREATE TABLE links (
+    id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    trio_id UUID,
+    FOREIGN KEY (trio_id) REFERENCES trips(id) ON DELETE CASCADE
+)
